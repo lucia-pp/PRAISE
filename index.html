@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Adaptive Potential of a Multi-Domain System</title>
+  <style>
+    :root{
+      --accent:#0b72d8;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --btn:#0ea5a4;
+      --btn-hover:#08958f;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);color:#0f172a;min-height:100vh;display:flex;flex-direction:column;
+    }
+    header{padding:3rem 1.5rem 1.3rem;text-align:center}
+    header h1{margin:0;font-size:1.8rem;color:var(--accent)}
+    header p.subtitle{margin:.5rem 0 0;font-size:1.25rem;color:var(--muted)}
+
+    .container{width:100%;max-width:1100px;margin:1.25rem auto;padding:1rem}
+
+    .controls{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem}
+    .network-btn{
+      appearance:none;border:0;padding:.8rem 1.1rem;border-radius:10px;background:linear-gradient(180deg,var(--btn),#059e93);
+      color:white;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(2,6,23,0.08);transition:transform .12s ease,box-shadow .12s ease;
+    }
+    .network-btn:active{transform:translateY(1px)}
+    .network-btn[aria-pressed="true"]{outline:3px solid rgba(11,114,216,0.12);box-shadow:0 10px 30px rgba(11,114,216,0.12)}
+
+    .frame-wrap{background:var(--card);padding:0.75rem;border-radius:var(--radius);box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+    iframe{width:100%;height:72vh;border:0;border-radius:8px;background:white;display:block}
+
+    .meta{display:flex;align-items:center;justify-content:space-between;margin-top:.6rem;gap:1rem}
+    .meta small{color:var(--muted)}
+    .open-link{font-size:.95rem;text-decoration:none;color:var(--accent);border:1px solid rgba(11,114,216,0.08);padding:.45rem .6rem;border-radius:8px}
+
+    .note{margin-top:1rem;background:linear-gradient(180deg,rgba(11,114,216,0.03),transparent);padding:1rem;border-radius:10px;color:var(--muted);font-size:.95rem}
+
+    @media(min-width:900px){
+      header h1{font-size:2.2rem}
+      iframe{height:78vh}
+    }
+    @media(max-width:560px){
+      .network-btn{padding:.6rem .85rem;font-size:.92rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Adaptive Potential of a Multi-Domain System</h1>
+    <p class="subtitle">PRAISE: interactive correlational networks</p>
+  </header>
+
+  <main class="container">
+
+    <!-- CONTROL BUTTONS: update the data-src values below to match your network HTML filenames -->
+    <div class="controls" role="tablist" aria-label="Choose a PRAISE network">
+      <button class="network-btn" role="tab" aria-pressed="false" data-src="network_full_PRAISET0age_FINAL.html">PRAISE T0</button>
+      <button class="network-btn" role="tab" aria-pressed="false" data-src="nework_full_HRVqage.html">PRAISE HRV T0</button>
+      <button class="network-btn" role="tab" aria-pressed="false" data-src="network_full_T1q.html">PRAISE T1</button>
+    </div>
+
+    <!-- IFRAME: the selected network will be loaded here -->
+    <div class="frame-wrap">
+      <iframe id="preview" title="PRAISE network preview" srcdoc="<p style='font-family:system-ui,Arial; padding:1rem;color:#334155'>Select a network above to preview it here. If the preview fails, use the "Open in new tab" link below.</p>"></iframe>
+    </div>
+
+    <div class="meta">
+      <small id="currentLabel">No network selected</small>
+      <div>
+        <a id="openNew" class="open-link" href="#" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+    </div>
+
+    <div class="note">
+      Tip: Put this file as <code>index.html</code> at the root of your GitHub Pages branch and make sure the three network HTML files are in the same folder (or adjust the paths in the buttons' <code>data-src</code> attributes). If a network page does not appear inside the preview, open it in a new tab using the "Open in new tab" link — some pages may block embedding with an HTTP header.
+    </div>
+
+  
+
+    <div class="readme" aria-label="Project README">
+      <h3>README — Variables</h3>
+      <p>This section reproduces your README with the list of variables used by the PRAISE networks.</p>
+      <ul>
+        <li>Frailty: Frailty Index</li>
+        <li>BMI: Body mass index</li>
+        <li>Grip: handgrip strength</li>
+        <li>MMSE: Mini-Mental State Examination</li>
+        <li>SSS: Social Support Scale</li>
+        <li>MHC_SF: Mental Health Continuum Short Form</li>
+        <li>ESS: Epworth Sleepiness Scale</li>
+        <li>MNA: Mini Nutritional Assessment</li>
+        <li>RAVLT_I: Rey Auditory Verbal Learning Test Immediate recall</li>
+        <li>RAVLT_D: Rey Auditory Verbal Learning Test Delayed recall</li>
+        <li>SPPB: Short Physical Performance Battery</li>
+        <li>Htime: execution time (s) for the H cancellation test</li>
+        <li>Fluency: Phonemic verbal fluency</li>
+        <li>HADS_A: Hospital Anxiety and Depression Scale- Anxiety</li>
+        <li>HADS_D: Hospital Anxiety and Depression Scale- Depression</li>
+        <li>HADS_TOT: Hospital Anxiety and Depression Scale</li>
+        <li>DTCSwitch: Dual task Cost of Switching task performed on Dividat Senso</li>
+        <li>StroopDTC_Inh_1: Dual task Cost of Stroop Inhibition task performed on Dividat Senso- baseline RT colours</li>
+        <li>StroopDTC_Inh_2: Dual task Cost of Stroop Inhibition task performed on Dividat Senso- baseline RT words</li>
+        <li>StroopDTC_Flex_1: Dual task Cost of Stroop Flexibility task performed on Dividat Senso- baseline RT colours</li>
+        <li>StroopDTC_Flex_2: Dual task Cost of Stroop Flexibility task performed on Dividat Senso- baseline RT words</li>
+        <li>TugDTC: Dual task Cost of Timed Up and Go- normal pace</li>
+        <li>TugDTC_fast: Dual task Cost of Timed Up and Go- fast pace</li>
+        <li>SixMTW: 6 Minutes Walking Test</li>
+        <li>SWAY_C_PL: The total distance the centre of pressure moved during the test, closed eyes</li>
+        <li>SWAY_O_PL: The total distance the centre of pressure moved during the test, open eyes</li>
+        <li>SWAY_C_MaxDev: The maximum deviation of the centre of pressure from the initial position</li>
+        <li>SWAY_C_Speed: The average speed (mm/s) at which the centre of pressure moved during the test</li>
+        <li>Hear: Whisper test</li>
+        <li>Vacuity: Visual Acuity- Snellen chart</li>
+        <li>PEF: Peak of expiratory Flow</li>
+        <li>NPA: No-physical activity (actigraphic registration)</li>
+        <li>LPA: Light physical activity (actigraphic registration)</li>
+        <li>MPA: Medium physical activity (actigraphic registration)</li>
+        <li>VPA: Vigorous physical activity (actigraphic registration)</li>
+        <li>sleep_efficiency: sleep efficiency (actigraphic registration)</li>
+        <li>wake_efficiency: wake efficiency (actigraphic registration)</li>
+        <li>PPB: percentage duration of pseudo-periodic behaviour (actigraphic registration)</li>
+        <li>TP_rest: Total power in supine position</li>
+        <li>LFa_rest: Low Frequency absolute power in supine position</li>
+        <li>HFa_rest: High Frequency absolute power in supine position</li>
+        <li>LFnu_rest: Low Frequency normalized units in supine position</li>
+        <li>HFnu_rest: High Frequency normalized units in supine position</li>
+        <li>LFHF_rest: Ratio of Low and High Frequencies in supine position</li>
+        <li>DeltaHFa: Percentage change in HFa from supine to standing</li>
+        <li>DeltaLFa: Percentage change in LFa from supine to standing</li>
+        <li>DeltaLF: Relative change in LFnu from supine to standing</li>
+        <li>DeltaLFHF: Relative change in LF/HFnu from supine to standing</li>
+        <li>DeltaHF: Relative change in HFnu from supine to standing</li>
+        <li>TP_stand: Total power in standing position</li>
+        <li>LFa_stand: Low Frequency absolute power in standing position</li>
+        <li>HFa_stand: High Frequency absolute power in standing position</li>
+        <li>LFnu_stand: Low Frequency normalized units in standing position</li>
+        <li>HFnu_stand: High Frequency normalized units in standing position</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    // Simple controller for loading network files into the iframe
+    const buttons = Array.from(document.querySelectorAll('.network-btn'));
+    const iframe = document.getElementById('preview');
+    const currentLabel = document.getElementById('currentLabel');
+    const openNew = document.getElementById('openNew');
+
+    function setActive(btn){
+      buttons.forEach(b=>{
+        const isActive = b === btn;
+        b.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function loadNetwork(src, label){
+      // update iframe src -- using src not srcdoc so assets load normally
+      iframe.src = src;
+      currentLabel.textContent = label;
+      openNew.href = src;
+    }
+
+    buttons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const src = btn.getAttribute('data-src');
+        const label = btn.textContent.trim();
+        setActive(btn);
+        loadNetwork(src,label);
+      });
+
+      // keyboard support
+      btn.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+
+    // accessibility: focus the first button on load
+    if(buttons.length) buttons[0].focus();
+  </script>
+</body>
+</html>
