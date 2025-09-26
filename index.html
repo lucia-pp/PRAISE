@@ -3,50 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <title>The Adaptive Potential of a Multi-Domain System</title>
   <style>
     :root{
-      --accent:#0b72d8;
-      --muted:#6b7280;
-      --bg:#f7fafc;
-      --card:#ffffff;
-      --btn:#0ea5a4;
-      --btn-hover:#08958f;
+      --accent:#e6e9ef;
+      --muted:#cbd5e1;
+      --bg:#0b1220;
+      --glass: rgba(8,12,18,0.56);
+      --glass-2: rgba(255,255,255,0.06);
+      --btn-bg: rgba(255,255,255,0.94);
+      --btn-fg:#071426;
       --radius:12px;
+      --title-font: 'Playfair Display', serif;
+      --body-font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     *{box-sizing:border-box}
     body{
-      margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      /* Background image: put your file at the repo root named `background.jpg` or change the --bg-image variable below to point to a different path or external URL */
+      margin:0;
+      font-family:var(--body-font);
+      /* layered dark glass over the background image */
       --bg-image: url("background.jpg");
-      background-image: linear-gradient(rgba(247,250,252,0.65), rgba(247,250,252,0.65)), var(--bg-image);
+      background-image: linear-gradient(rgba(6,8,10,0.36), rgba(6,8,10,0.36)), var(--bg-image);
       background-size: cover;
       background-position: center center;
-      color:#0f172a;min-height:100vh;display:flex;flex-direction:column;
+      color: #f8fafc;
+      min-height:100vh;display:flex;flex-direction:column;
     }
-    header{padding:3rem 1.5rem 1.3rem;text-align:center}
-    header h1{margin:0;font-size:1.8rem;color:var(--accent)}
-    header p.subtitle{margin:.5rem 0 0;font-size:1.25rem;color:var(--muted)}
+    header{padding:3rem 1.5rem 1.3rem;text-align:center;}
+    header h1{margin:0;font-size:2.4rem;color:var(--accent);font-family:var(--title-font);font-weight:700;text-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    header p.subtitle{margin:.5rem 0 0;font-size:1.2rem;color:var(--muted)}
 
     .container{width:100%;max-width:1100px;margin:1.25rem auto;padding:1rem}
 
-    .controls{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem}
-    .network-btn{
-      appearance:none;border:0;padding:.8rem 1.1rem;border-radius:10px;background:linear-gradient(180deg,var(--btn),#059e93);
-      color:white;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(2,6,23,0.08);transition:transform .12s ease,box-shadow .12s ease;
-    }
-    .network-btn:active{transform:translateY(1px)}
-    .network-btn[aria-pressed="true"]{outline:3px solid rgba(11,114,216,0.12);box-shadow:0 10px 30px rgba(11,114,216,0.12)}
+    /* controls: translucent glass panel */
+    .controls{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;padding:1rem;border-radius:14px;background:rgba(255,255,255,0.03);box-shadow:0 12px 36px rgba(2,6,23,0.5);backdrop-filter:blur(6px)}
+    .network-btn{appearance:none;border:0;padding:.8rem 1.15rem;border-radius:10px;background:var(--btn-bg);color:var(--btn-fg);font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(2,6,23,0.28);transition:transform .12s ease,box-shadow .12s ease,opacity .12s}
+    .network-btn:hover{transform:translateY(-3px);opacity:0.96}
+    .network-btn[aria-pressed="true"]{box-shadow:0 12px 32px rgba(2,6,23,0.5);transform:translateY(-4px);outline:2px solid rgba(255,255,255,0.06)}
 
-    
-
-    
-
-    .note{margin-top:1rem;background:linear-gradient(180deg,rgba(11,114,216,0.03),transparent);padding:1rem;border-radius:10px;color:var(--muted);font-size:.95rem}
+    /* readme / content card */
+    .readme{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:1.25rem;border-radius:12px;color:var(--muted);box-shadow:0 8px 30px rgba(2,6,23,0.45);margin-top:1rem}
+    .readme h3{color:var(--accent)}
+    .readme summary{color:var(--muted);font-weight:600;}
 
     @media(min-width:900px){
-      header h1{font-size:2.2rem}
-      iframe{height:78vh}
+      header h1{font-size:3rem}
     }
     @media(max-width:560px){
       .network-btn{padding:.6rem .85rem;font-size:.92rem}
@@ -69,7 +71,7 @@
     </div>
 
     <!-- IFRAME: the selected network will be loaded here -->
-    <div class="note" style="margin-top:1rem;"
+    <div class="note" style="margin-top:1rem;">Tip: Place this file as <code>index.html</code> at the root of your GitHub Pages branch and keep the three network HTML files next to it (or update the buttons' <code>data-src</code> paths). Click any button to open the corresponding network in a new tab.</div>
 
   
 
