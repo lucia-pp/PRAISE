@@ -62,87 +62,86 @@
     <!-- CONTROL BUTTONS: update the data-src values below to match your network HTML filenames -->
     <div class="controls" role="tablist" aria-label="Choose a PRAISE network">
       <button class="network-btn" role="tab" aria-pressed="false" data-src="network_full_PRAISET0age_FINAL.html">PRAISE T0</button>
-      <button class="network-btn" role="tab" aria-pressed="false" data-src="nework_full_HRVqage.html">PRAISE HRV T0</button>
+      <button class="network-btn" role="tab" aria-pressed="false" data-src="network_full_HRVqage.html">PRAISE HRV T0</button>
       <button class="network-btn" role="tab" aria-pressed="false" data-src="network_full_T1q.html">PRAISE T1</button>
     </div>
 
     <!-- IFRAME: the selected network will be loaded here -->
     <div class="frame-wrap">
-      <iframe id="preview" title="PRAISE network preview" srcdoc="<p style='font-family:system-ui,Arial; padding:1rem;color:#334155'>Select a network above to preview it here. If the preview fails, use the "Open in new tab" link below.</p>"></iframe>
+      <div style="padding:1rem;color:#334155"> To view a network, open it in a new tab using the buttons above.</div>
     </div>
-
-    <div class="meta">
-      <small id="currentLabel">No network selected</small>
-      <div>
-        <a id="openNew" class="open-link" href="#" target="_blank" rel="noopener">Open in new tab</a>
-      </div>
-    </div>
-
-    <div class="note">
-
-    </div>
-
   
 
     <div class="readme" aria-label="Project README">
-      <h3>Variables</h3>
-      <p>Variables used by the PRAISE networks (absolute r threshold >0.4.</p>
+      <h3>PRAISE - study overview</h3>
+      <p>PRAISE is a monocentric, randomized, two-arm pilot trial that enrols older adults in the pre-Frailty range (FI 0.10–0.40). Here you can explore the correlational visual networks across the different study's timepoints. To ensure both inclusiveness and robustness, the baseline (T0) analyses were performed using two complementary datasets, which differed in the treatment of HRV measures and potential confounding factors, and consequently in the number of included subjects, and then repeated at T1:</p>
       <ul>
-        <li>Frailty: Frailty Index</li>
-        <li>BMI: Body mass index</li>
-        <li>Grip: handgrip strength</li>
-        <li>MMSE: Mini-Mental State Examination</li>
-        <li>SSS: Social Support Scale</li>
-        <li>MHC_SF: Mental Health Continuum Short Form</li>
-        <li>ESS: Epworth Sleepiness Scale</li>
-        <li>MNA: Mini Nutritional Assessment</li>
-        <li>RAVLT_I: Rey Auditory Verbal Learning Test Immediate recall</li>
-        <li>RAVLT_D: Rey Auditory Verbal Learning Test Delayed recall</li>
-        <li>SPPB: Short Physical Performance Battery</li>
-        <li>Htime: execution time (s) for the H cancellation test</li>
-        <li>Fluency: Phonemic verbal fluency</li>
-        <li>HADS_A: Hospital Anxiety and Depression Scale- Anxiety</li>
-        <li>HADS_D: Hospital Anxiety and Depression Scale- Depression</li>
-        <li>HADS_TOT: Hospital Anxiety and Depression Scale</li>
-        <li>DTCSwitch: Dual task Cost of Switching task performed on Dividat Senso</li>
-        <li>StroopDTC_Inh_1: Dual task Cost of Stroop Inhibition task performed on Dividat Senso- baseline RT colours</li>
-        <li>StroopDTC_Inh_2: Dual task Cost of Stroop Inhibition task performed on Dividat Senso- baseline RT words</li>
-        <li>StroopDTC_Flex_1: Dual task Cost of Stroop Flexibility task performed on Dividat Senso- baseline RT colours</li>
-        <li>StroopDTC_Flex_2: Dual task Cost of Stroop Flexibility task performed on Dividat Senso- baseline RT words</li>
-        <li>TugDTC: Dual task Cost of Timed Up and Go- normal pace</li>
-        <li>TugDTC_fast: Dual task Cost of Timed Up and Go- fast pace</li>
-        <li>SixMTW: 6 Minutes Walking Test</li>
-        <li>SWAY_C_PL: The total distance the centre of pressure moved during the test, closed eyes</li>
-        <li>SWAY_O_PL: The total distance the centre of pressure moved during the test, open eyes</li>
-        <li>SWAY_C_MaxDev: The maximum deviation of the centre of pressure from the initial position</li>
-        <li>SWAY_C_Speed: The average speed (mm/s) at which the centre of pressure moved during the test</li>
-        <li>Hear: Whisper test</li>
-        <li>Vacuity: Visual Acuity- Snellen chart</li>
-        <li>PEF: Peak of expiratory Flow</li>
-        <li>NPA: No-physical activity (actigraphic registration)</li>
-        <li>LPA: Light physical activity (actigraphic registration)</li>
-        <li>MPA: Medium physical activity (actigraphic registration)</li>
-        <li>VPA: Vigorous physical activity (actigraphic registration)</li>
-        <li>sleep_efficiency: sleep efficiency (actigraphic registration)</li>
-        <li>wake_efficiency: wake efficiency (actigraphic registration)</li>
-        <li>PPB: percentage duration of pseudo-periodic behaviour (actigraphic registration)</li>
-        <li>TP_rest: Total power in supine position</li>
-        <li>LFa_rest: Low Frequency absolute power in supine position</li>
-        <li>HFa_rest: High Frequency absolute power in supine position</li>
-        <li>LFnu_rest: Low Frequency normalized units in supine position</li>
-        <li>HFnu_rest: High Frequency normalized units in supine position</li>
-        <li>LFHF_rest: Ratio of Low and High Frequencies in supine position</li>
-        <li>DeltaHFa: Percentage change in HFa from supine to standing</li>
-        <li>DeltaLFa: Percentage change in LFa from supine to standing</li>
-        <li>DeltaLF: Relative change in LFnu from supine to standing</li>
-        <li>DeltaLFHF: Relative change in LF/HFnu from supine to standing</li>
-        <li>DeltaHF: Relative change in HFnu from supine to standing</li>
-        <li>TP_stand: Total power in standing position</li>
-        <li>LFa_stand: Low Frequency absolute power in standing position</li>
-        <li>HFa_stand: High Frequency absolute power in standing position</li>
-        <li>LFnu_stand: Low Frequency normalized units in standing position</li>
-        <li>HFnu_stand: High Frequency normalized units in standing position</li>
+        <li><strong>PRAISE T0:</strong> all available data are reported in this dataset. HRV indices were considered for all subjects independently of medicine intake but excluding ECG signal not analysed for technical reasons (e.g. artifacts, breathing inconsistencies, arrhythmias). The total sample of PRAISE T0 consists in N=60 subjects.</li>
+        <li><strong>PRAISE HRV T0:</strong> thirty subjects undergoing beta blockers, SSRI, Ace-inhibitors, or Benzodiazepine intake (medicines influencing HRV), or with irregular breathing/heartbeat were excluded from the statistical analyses in this dataset, yielding a final clean sample of N=30 subjects. Intrinsic Capacity composite scores are excluded from this visualization.</li>
+        <li><strong>PRAISE T1:</strong> after 12 months of exergame training subjects underwent the same assessment. Analysis at T1, given the smaller sample size, were conducted on the entire sample (N=36), irrespective of medications.</li>
       </ul>
+
+      <details aria-labelledby="variables-summary" style="margin-top:1rem;padding:0.75rem;border-radius:8px;border:1px solid rgba(11,114,216,0.06);background:#fbfdff">
+        <summary id="variables-summary" style="cursor:pointer;font-weight:600;">Variables (click to expand)</summary>
+        <div style="margin-top:.75rem;line-height:1.45;color:#24303f">
+          <ul>
+            <li>Frailty: Frailty Index</li>
+            <li>BMI: Body mass index</li>
+            <li>Grip: handgrip strength</li>
+            <li>MMSE: Mini-Mental State Examination</li>
+            <li>SSS: Social Support Scale</li>
+            <li>MHC_SF: Mental Health Continuum Short Form</li>
+            <li>ESS: Epworth Sleepiness Scale</li>
+            <li>MNA: Mini Nutritional Assessment</li>
+            <li>RAVLT_I: Rey Auditory Verbal Learning Test Immediate recall</li>
+            <li>RAVLT_D: Rey Auditory Verbal Learning Test Delayed recall</li>
+            <li>SPPB: Short Physical Performance Battery</li>
+            <li>Htime: execution time (s) for the H cancellation test</li>
+            <li>Fluency: Phonemic verbal fluency</li>
+            <li>HADS_A: Hospital Anxiety and Depression Scale- Anxiety</li>
+            <li>HADS_D: Hospital Anxiety and Depression Scale- Depression</li>
+            <li>HADS_TOT: Hospital Anxiety and Depression Scale</li>
+            <li>DTCSwitch: Dual task Cost of Switching task performed on Dividat Senso</li>
+            <li>StroopDTC_Inh_1: Dual task Cost of Stroop Inhibition task performed on Dividat Senso- baseline RT colours</li>
+            <li>StroopDTC_Inh_2: Dual task Cost of Stroop Inhibition task performed on Dividat Senso- baseline RT words</li>
+            <li>StroopDTC_Flex_1: Dual task Cost of Stroop Flexibility task performed on Dividat Senso- baseline RT colours</li>
+            <li>StroopDTC_Flex_2: Dual task Cost of Stroop Flexibility task performed on Dividat Senso- baseline RT words</li>
+            <li>TugDTC: Dual task Cost of Timed Up and Go- normal pace</li>
+            <li>TugDTC_fast: Dual task Cost of Timed Up and Go- fast pace</li>
+            <li>SixMTW: 6 Minutes Walking Test</li>
+            <li>SWAY_C_PL: The total distance the centre of pressure moved during the test, closed eyes</li>
+            <li>SWAY_O_PL: The total distance the centre of pressure moved during the test, open eyes</li>
+            <li>SWAY_C_MaxDev: The maximum deviation of the centre of pressure from the initial position</li>
+            <li>SWAY_C_Speed: The average speed (mm/s) at which the centre of pressure moved during the test</li>
+            <li>Hear: Whisper test</li>
+            <li>Vacuity: Visual Acuity- Snellen chart</li>
+            <li>PEF: Peak of expiratory Flow</li>
+            <li>NPA: No-physical activity (actigraphic registration)</li>
+            <li>LPA: Light physical activity (actigraphic registration)</li>
+            <li>MPA: Medium physical activity (actigraphic registration)</li>
+            <li>VPA: Vigorous physical activity (actigraphic registration)</li>
+            <li>sleep_efficiency: sleep efficiency (actigraphic registration)</li>
+            <li>wake_efficiency: wake efficiency (actigraphic registration)</li>
+            <li>PPB: percentage duration of pseudo-periodic behaviour (actigraphic registration)</li>
+            <li>TP_rest: Total power in supine position</li>
+            <li>LFa_rest: Low Frequency absolute power in supine position</li>
+            <li>HFa_rest: High Frequency absolute power in supine position</li>
+            <li>LFnu_rest: Low Frequency normalized units in supine position</li>
+            <li>HFnu_rest: High Frequency normalized units in supine position</li>
+            <li>LFHF_rest: Ratio of Low and High Frequencies in supine position</li>
+            <li>DeltaHFa: Percentage change in HFa from supine to standing</li>
+            <li>DeltaLFa: Percentage change in LFa from supine to standing</li>
+            <li>DeltaLF: Relative change in LFnu from supine to standing</li>
+            <li>DeltaLFHF: Relative change in LF/HFnu from supine to standing</li>
+            <li>DeltaHF: Relative change in HFnu from supine to standing</li>
+            <li>TP_stand: Total power in standing position</li>
+            <li>LFa_stand: Low Frequency absolute power in standing position</li>
+            <li>HFa_stand: High Frequency absolute power in standing position</li>
+            <li>LFnu_stand: Low Frequency normalized units in standing position</li>
+            <li>HFnu_stand: High Frequency normalized units in standing position</li>
+          </ul>
+        </div>
+      </details>
     </div>
 
   </main>
@@ -190,3 +189,4 @@
   </script>
 </body>
 </html>
+
