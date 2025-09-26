@@ -17,7 +17,12 @@
     *{box-sizing:border-box}
     body{
       margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);color:#0f172a;min-height:100vh;display:flex;flex-direction:column;
+      /* Background image: put your file at the repo root named `background.jpg` or change the --bg-image variable below to point to a different path or external URL */
+      --bg-image: url("background.jpg");
+      background-image: linear-gradient(rgba(247,250,252,0.65), rgba(247,250,252,0.65)), var(--bg-image);
+      background-size: cover;
+      background-position: center center;
+      color:#0f172a;min-height:100vh;display:flex;flex-direction:column;
     }
     header{padding:3rem 1.5rem 1.3rem;text-align:center}
     header h1{margin:0;font-size:1.8rem;color:var(--accent)}
@@ -33,12 +38,9 @@
     .network-btn:active{transform:translateY(1px)}
     .network-btn[aria-pressed="true"]{outline:3px solid rgba(11,114,216,0.12);box-shadow:0 10px 30px rgba(11,114,216,0.12)}
 
-    .frame-wrap{background:var(--card);padding:0.75rem;border-radius:var(--radius);box-shadow:0 8px 24px rgba(2,6,23,0.06)}
-    iframe{width:100%;height:72vh;border:0;border-radius:8px;background:white;display:block}
+    
 
-    .meta{display:flex;align-items:center;justify-content:space-between;margin-top:.6rem;gap:1rem}
-    .meta small{color:var(--muted)}
-    .open-link{font-size:.95rem;text-decoration:none;color:var(--accent);border:1px solid rgba(11,114,216,0.08);padding:.45rem .6rem;border-radius:8px}
+    
 
     .note{margin-top:1rem;background:linear-gradient(180deg,rgba(11,114,216,0.03),transparent);padding:1rem;border-radius:10px;color:var(--muted);font-size:.95rem}
 
@@ -66,9 +68,13 @@
       <button class="network-btn" role="tab" aria-pressed="false" data-src="network_full_T1q.html">PRAISE T1</button>
     </div>
 
+    <!-- IFRAME: the selected network will be loaded here -->
+    <div class="note" style="margin-top:1rem;">Tip: Place this file as <code>index.html</code> at the root of your GitHub Pages branch and keep the three network HTML files next to it (or update the buttons' <code>data-src</code> paths). Click any button to open the corresponding network in a new tab.</div>
+
+  
 
     <div class="readme" aria-label="Project README">
-      <h3>PRAISE - study overview</h3>
+      <h3>PRAISE — study overview</h3>
       <p>PRAISE is a monocentric, randomized, two-arm pilot trial that enrols older adults in the pre-Frailty range (FI 0.10–0.40). Here you can explore the correlational visual networks across the different study's timepoints. To ensure both inclusiveness and robustness, the baseline (T0) analyses were performed using two complementary datasets, which differed in the treatment of HRV measures and potential confounding factors, and consequently in the number of included subjects, and then repeated at T1:</p>
       <ul>
         <li><strong>PRAISE T0:</strong> all available data are reported in this dataset. HRV indices were considered for all subjects independently of medicine intake but excluding ECG signal not analysed for technical reasons (e.g. artifacts, breathing inconsistencies, arrhythmias). The total sample of PRAISE T0 consists in N=60 subjects.</li>
@@ -142,46 +148,26 @@
   </main>
 
   <script>
-    // Simple controller for loading network files into the iframe
-    const buttons = Array.from(document.querySelectorAll('.network-btn'));
-    const iframe = document.getElementById('preview');
-    const currentLabel = document.getElementById('currentLabel');
-    const openNew = document.getElementById('openNew');
-
-    function setActive(btn){
-      buttons.forEach(b=>{
-        const isActive = b === btn;
-        b.setAttribute('aria-pressed', String(isActive));
-      });
+// Buttons now open networks in a new tab (preview removed from the page)
+const buttons = Array.from(document.querySelectorAll('.network-btn'));
+buttons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const src = btn.getAttribute('data-src');
+    // open in new tab/window
+    window.open(src, '_blank', 'noopener');
+    // update ARIA pressed state for visual feedback
+    buttons.forEach(b=> b.setAttribute('aria-pressed', String(b===btn)));
+  });
+  btn.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      btn.click();
     }
-
-    function loadNetwork(src, label){
-      // update iframe src -- using src not srcdoc so assets load normally
-      iframe.src = src;
-      currentLabel.textContent = label;
-      openNew.href = src;
-    }
-
-    buttons.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const src = btn.getAttribute('data-src');
-        const label = btn.textContent.trim();
-        setActive(btn);
-        loadNetwork(src,label);
-      });
-
-      // keyboard support
-      btn.addEventListener('keydown', (e)=>{
-        if(e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    });
-
-    // accessibility: focus the first button on load
-    if(buttons.length) buttons[0].focus();
-  </script>
+  });
+});
+if(buttons.length) buttons[0].focus();
+</script>
 </body>
 </html>
+
 
