@@ -54,6 +54,20 @@
     .readme summary{color:#ffffff;font-weight:700;padding:.6rem .75rem;border-radius:8px;background:rgba(255,255,255,0.04);display:inline-block}
     .readme summary:hover{background:rgba(255,255,255,0.07);cursor:pointer}
     .readme [role="list"]{color:#dbe9f8}
+/* make readme cards match the title-box / container width and centering */
+.readme {
+  display: block;
+  max-width: 1100px;          /* same maximum width as .container/.title-box */
+  width: calc(100% - 2rem);   /* small horizontal padding on narrow screens */
+  margin: 1rem auto;          /* center it and keep vertical spacing */
+  padding: 1.5rem;            /* existing padding, adjust if you want */
+  border-radius: 12px;
+  background: var(--card-bg); /* keeps dark glass look */
+  box-shadow: 0 10px 36px rgba(2,6,23,0.6);
+  color: #e6eef8;
+}
+.readme details { width: 100%; }     /* ensure details expands full width of the card */
+.readme summary { display:inline-block } /* keeps summary pill look inside the card */
 
     @media(min-width:900px){
       header h1{font-size:3.25rem}
@@ -95,7 +109,6 @@
         <li><strong>PRAISE HRV T0:</strong> thirty subjects undergoing beta blockers, SSRI, Ace-inhibitors, or Benzodiazepine intake (medicines influencing HRV), or with irregular breathing/heartbeat were excluded from the statistical analyses in this dataset, yielding a final clean sample of N=30 subjects. Intrinsic Capacity composite scores are excluded from this visualization.</li>
         <li><strong>PRAISE T1:</strong> after 12 months of exergame training subjects underwent the same assessment. Analysis at T1, given the smaller sample size, were conducted on the entire sample (N=36), irrespective of medications.</li>
        </ul>
-    </div>
      <h3>Network implementation and how to read it</h3>
        <p>Each variable is represented as a node, and edges are drawn between nodes when the absolute correlation exceeded a predefined threshold (|r| > 0.4). Node colors reflected their cluster assignment from hierarchical clustering- Ward’s D2 method. Edge width is proportional to the magnitude of the correlation. Green edges represent positive correlations, while blue negative correlations (Spearman's Rho). Network visualizations were generated using the visNetwork package in R. </p>
       <ul>
