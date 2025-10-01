@@ -94,8 +94,12 @@
         <li><strong>PRAISE T0:</strong> all available data are reported in this dataset. HRV indices were considered for all subjects independently of medicine intake but excluding ECG signal not analysed for technical reasons (e.g. artifacts, breathing inconsistencies, arrhythmias). The total sample of PRAISE T0 consists in N=60 subjects.</li>
         <li><strong>PRAISE HRV T0:</strong> thirty subjects undergoing beta blockers, SSRI, Ace-inhibitors, or Benzodiazepine intake (medicines influencing HRV), or with irregular breathing/heartbeat were excluded from the statistical analyses in this dataset, yielding a final clean sample of N=30 subjects. Intrinsic Capacity composite scores are excluded from this visualization.</li>
         <li><strong>PRAISE T1:</strong> after 12 months of exergame training subjects underwent the same assessment. Analysis at T1, given the smaller sample size, were conducted on the entire sample (N=36), irrespective of medications.</li>
-      </ul>
+       </ul>
     </div>
+     <h3>Network implementation and how to read it</h3>
+       <p>Each variable is represented as a node, and edges are drawn between nodes when the absolute correlation exceeded a predefined threshold (|r| > 0.4). Node colors reflected their cluster assignment from hierarchical clustering- Ward’s D2 method. Edge width is proportional to the magnitude of the correlation. Green edges represent positive correlations, while blue negative correlations (Spearman's Rho). Network visualizations were generated using the visNetwork package in R. </p>
+      <ul>
+        </div>
 
     <div class="readme">
       <details aria-labelledby="variables-summary" style="margin-top:0.5rem;padding:0.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.3)">
